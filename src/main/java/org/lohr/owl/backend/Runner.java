@@ -1,29 +1,29 @@
-package org.lohr.owl.backend.application;
+package org.lohr.owl.backend;
 
 import org.lohr.owl.backend.challenge.Challenge;
 import org.lohr.owl.backend.challengedeck.ChallengeDeck;
+import org.lohr.owl.backend.data.DataProvider;
 import org.lohr.owl.backend.playerdeck.Attribute;
 import org.lohr.owl.backend.playerdeck.PlayerCard;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Runner {
-    public void run() {
+    public static Map run() {
+        Map<Attribute, Double> result = new HashMap<>();
         ChallengeDeck challengeDeck = new ChallengeDeck();
         PlayerDeck playerDeck = new PlayerDeck();
         ArrayList<PlayerCard> playerCards = new ArrayList<>();
         List<Attribute> attributes = Arrays.asList(Attribute.STRENGTH, Attribute.CONSTITUTION, Attribute.DEXTERITY, Attribute.CHARISMA, Attribute.WISDOM, Attribute.INTELLIGENCE);
 
-        //playerCards.addAll(Main.getHumanRacePlayerCards());
-        //playerCards.addAll(Main.getBasicPlayerCards());
-        //playerCards.addAll(Main.getCharacterPlayerCards());
-        //playerCards.addAll(Main.getSpecialicationPlayerCards());
-        //playerDeck.setPlayerCards(playerCards);
+        playerCards.addAll(DataProvider.getHumanRacePlayerCards());
+        playerCards.addAll(DataProvider.getBasicPlayerCards());
+        playerCards.addAll(DataProvider.getCharacterPlayerCards());
+        playerCards.addAll(DataProvider.getSpecialisationPlayerCards());
+        playerDeck.setPlayerCards(playerCards);
 
-        //challengeDeck.setChallengeCards(Main.getChallengeDeck());
+        challengeDeck.setChallengeCards(DataProvider.getChallengeCards());
 
         Challenge challenge = new Challenge(challengeDeck, playerDeck, false);
         double runs = 100000;
@@ -35,7 +35,10 @@ public class Runner {
                 }
             }
             double successPercentage = Math.round((successCounter / runs) * 100);
-            System.out.println("Average success for " + attribute + ": " + successPercentage);
+            result.put(attribute, successPercentage);
+            //System.out.println("Average success for " + attribute + ": " + successPercentage);
+
         }
+        return result;
     }
 }

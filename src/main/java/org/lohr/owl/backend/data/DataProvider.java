@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DataProvider {
 
-    public ArrayList<PlayerCard> getBasicPlayerCards() {
+    public static ArrayList<PlayerCard> getBasicPlayerCards() {
         String basicLight = "Basic Light";
         String basicDark = "Basic Dark";
         PlayerCard basicLight1 = new PlayerCard(basicLight, new int[]{2, 0}, new int[]{1, 0}, new int[]{1, 0}, new int[]{1, 1}, new int[]{1, 1}, new int[]{0, 1});
