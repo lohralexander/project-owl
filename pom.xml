@@ -109,6 +109,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -156,6 +161,7 @@
             <dependencies>
                 <dependency>
                     <groupId>com.vaadin</groupId>
+                    <!--suppress MavenModelInspection -->
                     <artifactId>flow-server-production-mode</artifactId>
                 </dependency>
             </dependencies>
@@ -214,6 +220,7 @@
                     <!-- Runs the integration tests (*IT) after the server is started -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
+                        <!--suppress MavenModelInspection -->
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <executions>
                             <execution>

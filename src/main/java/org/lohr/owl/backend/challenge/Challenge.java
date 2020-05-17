@@ -1,5 +1,7 @@
 package org.lohr.owl.backend.challenge;
 
+
+import org.apache.log4j.Logger;
 import org.lohr.owl.backend.challengedeck.ChallengeCard;
 import org.lohr.owl.backend.challengedeck.ChallengeDeck;
 import org.lohr.owl.backend.challengedeck.ChallengeEnum;
@@ -8,6 +10,7 @@ import org.lohr.owl.backend.playerdeck.PlayerCard;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.StringJoiner;
 
@@ -15,17 +18,20 @@ public class Challenge {
 
     private final ChallengeDeck challengeDeck;
     private final PlayerDeck playerDeck;
-    private boolean systemOutPrint;
+    private static final Logger logger = Logger.getLogger(Challenge.class);
+    private final boolean logging;
+    private final Random rand;
 
     public Challenge(ChallengeDeck challengeDeck, PlayerDeck playerDeck, boolean systemOutPrint) {
         this.challengeDeck = challengeDeck;
         this.playerDeck = playerDeck;
-        this.systemOutPrint = systemOutPrint;
+        this.logging = systemOutPrint;
+        rand = new Random();
     }
 
     public boolean makeCheck(int amountCards, Attribute attribute) {
-        ArrayList<PlayerCard> tempPlayerDeck = new ArrayList<PlayerCard>(playerDeck.getPlayerCards());
-        ArrayList<ChallengeCard> tempChallengeDeck = new ArrayList<ChallengeCard>(challengeDeck.getChallengeCards());
+        ArrayList<PlayerCard> tempPlayerDeck = new ArrayList<>(playerDeck.getPlayerCards());
+        ArrayList<ChallengeCard> tempChallengeDeck = new ArrayList<>(challengeDeck.getChallengeCards());
 
         ArrayList<PlayerCard> drawnPlayerCards = drawPlayerCards(tempPlayerDeck, amountCards);
         ArrayList<ChallengeEnum> challengeEnums = evaluateChallengeCards(tempChallengeDeck, drawnPlayerCards, attribute);
@@ -33,8 +39,7 @@ public class Challenge {
     }
 
     private ArrayList<PlayerCard> drawPlayerCards(ArrayList<PlayerCard> playerDeck, int amountCards) {
-        Random rand = new Random();
-        ArrayList<PlayerCard> drawnPlayerCards = new ArrayList<PlayerCard>();
+        ArrayList<PlayerCard> drawnPlayerCards = new ArrayList<>();
 
         for (int i = 0; i < amountCards; i++) {
             int randomIndex = rand.nextInt(playerDeck.size());
@@ -45,8 +50,7 @@ public class Challenge {
     }
 
     private ArrayList<ChallengeEnum> evaluateChallengeCards(ArrayList<ChallengeCard> challengeDeck, ArrayList<PlayerCard> drawnPlayerCards, Attribute attribute) {
-        Random rand = new Random();
-        ArrayList<ChallengeEnum> evaluatedChallengeOutcomes = new ArrayList<ChallengeEnum>();
+        ArrayList<ChallengeEnum> evaluatedChallengeOutcomes = new ArrayList<>();
         StringJoiner drawnPlayerCardsAttributes;
         ArrayList<StringJoiner> drawnPlayerCardsAttributesList = new ArrayList<>();
 
@@ -63,12 +67,12 @@ public class Challenge {
             }
             drawnPlayerCardsAttributes = new StringJoiner(",", "[", "]");
             drawnPlayerCardsAttributesList.add(drawnPlayerCardsAttributes
-                    .add(drawnPlayerCard.getCardType())
+                    .add(drawnPlayerCard.getDeckName().toString())
                     .add(Integer.toString(drawnPlayerCard.getAttribute(attribute)[0]))
                     .add(Integer.toString(drawnPlayerCard.getAttribute(attribute)[1])));
         }
-        if(systemOutPrint){
-            System.out.println(drawnPlayerCardsAttributesList.toString());
+        if (logging) {
+            logger.info(drawnPlayerCardsAttributesList.toString());
         }
         return evaluatedChallengeOutcomes;
     }
@@ -76,7 +80,7 @@ public class Challenge {
     private boolean evaluateResult(ArrayList<ChallengeEnum> challengeEnums) {
         int successCounter = 0;
         boolean result;
-        ArrayList<ChallengeEnum> challengeEnumArrayList = new ArrayList<ChallengeEnum>();
+        ArrayList<ChallengeEnum> challengeEnumArrayList = new ArrayList<>();
         for (ChallengeEnum challengeEnum : challengeEnums) {
             challengeEnumArrayList.add(challengeEnum);
             switch (challengeEnum) {
@@ -96,14 +100,14 @@ public class Challenge {
                     break;
             }
         }
-        result = successCounter>0;
+        result = successCounter > 0;
         printChallengeEnum(challengeEnums, result);
         return result;
     }
 
-    public void printChallengeEnum(ArrayList<ChallengeEnum> challengeEnums, boolean result){
-        if(systemOutPrint){
-            System.out.println("Challenge Result: " + challengeEnums.toString() + " Success: " + result);
+    public void printChallengeEnum(List<ChallengeEnum> challengeEnums, boolean result) {
+        if (logging) {
+            logger.info("Challenge Result: " + challengeEnums.toString() + " Success: " + result);
         }
     }
 }

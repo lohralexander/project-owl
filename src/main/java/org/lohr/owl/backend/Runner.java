@@ -4,29 +4,35 @@ import org.lohr.owl.backend.challenge.Challenge;
 import org.lohr.owl.backend.challengedeck.ChallengeDeck;
 import org.lohr.owl.backend.data.DataProvider;
 import org.lohr.owl.backend.playerdeck.Attribute;
-import org.lohr.owl.backend.playerdeck.PlayerCard;
+import org.lohr.owl.backend.playerdeck.DeckName;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 
 public class Runner {
-    public static Map run() {
-        Map<Attribute, Double> result = new HashMap<>();
+    private Runner() {
+    }
+
+    public static Map<Attribute, Double> run() {
+        Map<Attribute, Double> result = new EnumMap<>(Attribute.class);
         ChallengeDeck challengeDeck = new ChallengeDeck();
-        PlayerDeck playerDeck = new PlayerDeck();
-        ArrayList<PlayerCard> playerCards = new ArrayList<>();
+        PlayerDeck playerDeck = new PlayerDeck(DeckName.MAIN);
         List<Attribute> attributes = Arrays.asList(Attribute.STRENGTH, Attribute.CONSTITUTION, Attribute.DEXTERITY, Attribute.CHARISMA, Attribute.WISDOM, Attribute.INTELLIGENCE);
 
-        playerCards.addAll(DataProvider.getHumanRacePlayerCards());
-        playerCards.addAll(DataProvider.getBasicPlayerCards());
-        playerCards.addAll(DataProvider.getCharacterPlayerCards());
-        playerCards.addAll(DataProvider.getSpecialisationPlayerCards());
-        playerDeck.setPlayerCards(playerCards);
+        playerDeck.mergeDecks(DataProvider.getBasicLightPlayerDeck());
+        playerDeck.mergeDecks(DataProvider.getBasicDarkPlayerDeck());
+        playerDeck.mergeDecks(DataProvider.getHumanRacePlayerDeck());
+        playerDeck.mergeDecks(DataProvider.getCharacterArrogantPlayerDeck());
+        playerDeck.mergeDecks(DataProvider.getCharacterWeakPlayerDeck());
+        playerDeck.mergeDecks(DataProvider.getSpecialisationPlayerDeck());
 
         challengeDeck.setChallengeCards(DataProvider.getChallengeCards());
 
         Challenge challenge = new Challenge(challengeDeck, playerDeck, false);
-        double runs = 100000;
+        double runs = 10000;
         for (Attribute attribute : attributes) {
             double successCounter = 0;
             for (int i = 0; i < runs; i++) {
@@ -36,8 +42,6 @@ public class Runner {
             }
             double successPercentage = Math.round((successCounter / runs) * 100);
             result.put(attribute, successPercentage);
-            //System.out.println("Average success for " + attribute + ": " + successPercentage);
-
         }
         return result;
     }
