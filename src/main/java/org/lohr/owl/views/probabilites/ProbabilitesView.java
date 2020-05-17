@@ -10,8 +10,10 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import org.lohr.owl.backend.Runner;
+import org.lohr.owl.backend.data.DataComponent;
 import org.lohr.owl.backend.playerdeck.Attribute;
 import org.lohr.owl.views.main.MainView;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 
@@ -21,7 +23,11 @@ import java.util.Map;
 @CssImport("styles/views/probabilites/probabilites-view.css")
 public class ProbabilitesView extends Div {
 
-    public ProbabilitesView() {
+    DataComponent dataComponent;
+
+    @Autowired
+    public ProbabilitesView(DataComponent dataComponent) {
+        this.dataComponent = dataComponent;
         VerticalLayout layout = new VerticalLayout();
         layout.getStyle().set("border", "1px solid #9E9E9E");
 
@@ -81,7 +87,7 @@ public class ProbabilitesView extends Div {
     }
 
     private Map startCalculation() {
-        return Runner.run();
+        return Runner.run(dataComponent);
     }
 
 }

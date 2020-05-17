@@ -76,6 +76,25 @@ public class DataProvider {
         return playerDeck;
     }
 
+    public static PlayerDeck getDeck(DeckName deckName) {
+        switch (deckName) {
+            case BASICLIGHT:
+                return getBasicLightPlayerDeck();
+            case BASICDARK:
+                return getBasicDarkPlayerDeck();
+            case RACEHUMAN:
+                return getHumanRacePlayerDeck();
+            case CHARACTERARROGANT:
+                return getCharacterArrogantPlayerDeck();
+            case CHARACTERWEAK:
+                return getCharacterWeakPlayerDeck();
+            case SPECIALISATIONMONK:
+                return getSpecialisationPlayerDeck();
+            default:
+                return null;
+        }
+    }
+
     public static List<ChallengeCard> getChallengeCards() {
         ArrayList<ChallengeCard> challengeCards = new ArrayList<>();
 

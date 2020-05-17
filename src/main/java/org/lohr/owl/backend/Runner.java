@@ -2,6 +2,7 @@ package org.lohr.owl.backend;
 
 import org.lohr.owl.backend.challenge.Challenge;
 import org.lohr.owl.backend.challengedeck.ChallengeDeck;
+import org.lohr.owl.backend.data.DataComponent;
 import org.lohr.owl.backend.data.DataProvider;
 import org.lohr.owl.backend.playerdeck.Attribute;
 import org.lohr.owl.backend.playerdeck.DeckName;
@@ -13,21 +14,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Runner {
+
     private Runner() {
     }
 
-    public static Map<Attribute, Double> run() {
+    public static Map<Attribute, Double> run(DataComponent dataComponent) {
         Map<Attribute, Double> result = new EnumMap<>(Attribute.class);
         ChallengeDeck challengeDeck = new ChallengeDeck();
         PlayerDeck playerDeck = new PlayerDeck(DeckName.MAIN);
         List<Attribute> attributes = Arrays.asList(Attribute.STRENGTH, Attribute.CONSTITUTION, Attribute.DEXTERITY, Attribute.CHARISMA, Attribute.WISDOM, Attribute.INTELLIGENCE);
 
-        playerDeck.mergeDecks(DataProvider.getBasicLightPlayerDeck());
-        playerDeck.mergeDecks(DataProvider.getBasicDarkPlayerDeck());
-        playerDeck.mergeDecks(DataProvider.getHumanRacePlayerDeck());
-        playerDeck.mergeDecks(DataProvider.getCharacterArrogantPlayerDeck());
-        playerDeck.mergeDecks(DataProvider.getCharacterWeakPlayerDeck());
-        playerDeck.mergeDecks(DataProvider.getSpecialisationPlayerDeck());
+        for (DeckName deckName : dataComponent.getDeckNames()) {
+            playerDeck.mergeDecks(DataProvider.getDeck(deckName));
+        }
 
         challengeDeck.setChallengeCards(DataProvider.getChallengeCards());
 
