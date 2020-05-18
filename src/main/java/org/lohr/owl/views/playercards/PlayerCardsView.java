@@ -6,6 +6,7 @@ import com.vaadin.flow.component.checkbox.CheckboxGroup;
 import com.vaadin.flow.component.checkbox.CheckboxGroupVariant;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.lohr.owl.backend.data.DataComponent;
@@ -22,7 +23,7 @@ import java.util.Set;
 @CssImport("styles/views/playercards/player-cards-view.css")
 public class PlayerCardsView extends Div {
 
-    DataComponent dataComponent;
+    private final DataComponent dataComponent;
 
     @Autowired
     public PlayerCardsView(DataComponent dataComponent) {
@@ -31,6 +32,8 @@ public class PlayerCardsView extends Div {
     }
 
     private void createView() {
+        add(new H1("Choose Player Decks"));
+
         CheckboxGroup<String> checkboxGroup = new CheckboxGroup<>();
         Button button = new Button();
 
@@ -39,7 +42,7 @@ public class PlayerCardsView extends Div {
         if (dataComponent.getDeckNames().isEmpty()) {
             checkboxGroup.setValue(Sets.newHashSet("Basic Light", "Basic Dark"));
         } else {
-            Set<String> set = new HashSet();
+            Set<String> set = new HashSet<>();
             for (DeckName deckName : dataComponent.getDeckNames()) {
                 set.add(DeckNameTransformer.of(deckName));
             }

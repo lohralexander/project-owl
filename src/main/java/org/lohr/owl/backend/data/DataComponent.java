@@ -15,7 +15,7 @@ import java.util.List;
 @Component("DataComponents")
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class DataComponent {
-    List<DeckName> deckNames;
+    private List<DeckName> deckNames;
 
     public DataComponent() {
         deckNames = new ArrayList<>();

@@ -18,7 +18,7 @@ public class Runner {
     private Runner() {
     }
 
-    public static Map<Attribute, Double> run(DataComponent dataComponent) {
+    public static Map<Attribute, Double> run(DataComponent dataComponent, int amountCards) {
         Map<Attribute, Double> result = new EnumMap<>(Attribute.class);
         ChallengeDeck challengeDeck = new ChallengeDeck();
         PlayerDeck playerDeck = new PlayerDeck(DeckName.MAIN);
@@ -35,7 +35,7 @@ public class Runner {
         for (Attribute attribute : attributes) {
             double successCounter = 0;
             for (int i = 0; i < runs; i++) {
-                if (challenge.makeCheck(3, attribute)) {
+                if (challenge.makeCheck(amountCards, attribute)) {
                     successCounter++;
                 }
             }
