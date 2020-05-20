@@ -2,21 +2,23 @@ package org.lohr.owl.backend.data;
 
 import org.lohr.owl.backend.challengedeck.ChallengeCard;
 import org.lohr.owl.backend.challengedeck.ChallengeEnum;
-import org.lohr.owl.backend.playerdeck.DeckName;
+import org.lohr.owl.backend.playerdeck.DeckNameEnum;
 import org.lohr.owl.backend.playerdeck.PlayerCard;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class DataProvider {
     public static void main(String[] args) {
         getCharacterArrogantPlayerDeck();
     }
 
     public static PlayerDeck getBasicLightPlayerDeck() {
-        DeckName deckname = DeckName.BASICLIGHT;
+        DeckNameEnum deckname = DeckNameEnum.BASICLIGHT;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{2, 0}, new int[]{1, 0}, new int[]{1, 0}, new int[]{1, 1}, new int[]{1, 1}, new int[]{0, 1}),
@@ -29,7 +31,7 @@ public class DataProvider {
     }
 
     public static PlayerDeck getBasicDarkPlayerDeck() {
-        DeckName deckname = DeckName.BASICDARK;
+        DeckNameEnum deckname = DeckNameEnum.BASICDARK;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{1, 0}, new int[]{1, 1}, new int[]{1, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 2}),
@@ -42,7 +44,7 @@ public class DataProvider {
     }
 
     public static PlayerDeck getHumanRacePlayerDeck() {
-        DeckName deckname = DeckName.RACEHUMAN;
+        DeckNameEnum deckname = DeckNameEnum.RACEHUMAN;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}),
@@ -52,21 +54,21 @@ public class DataProvider {
     }
 
     public static PlayerDeck getCharacterArrogantPlayerDeck() {
-        DeckName deckname = DeckName.CHARACTERARROGANT;
+        DeckNameEnum deckname = DeckNameEnum.CHARACTERARROGANT;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCard(new PlayerCard(deckname, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 2}, new int[]{0, 1}, new int[]{0, 1}));
         return playerDeck;
     }
 
     public static PlayerDeck getCharacterWeakPlayerDeck() {
-        DeckName deckname = DeckName.CHARACTERWEAK;
+        DeckNameEnum deckname = DeckNameEnum.CHARACTERWEAK;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCard(new PlayerCard(deckname, new int[]{0, 2}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}));
         return playerDeck;
     }
 
     public static PlayerDeck getSpecialisationPlayerDeck() {
-        DeckName deckname = DeckName.SPECIALISATIONMONK;
+        DeckNameEnum deckname = DeckNameEnum.SPECIALISATIONMONK;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{1, 1}, new int[]{1, 1}, new int[]{3, 0}, new int[]{0, 2}, new int[]{2, 0}, new int[]{1, 1}),
@@ -76,8 +78,8 @@ public class DataProvider {
         return playerDeck;
     }
 
-    public static PlayerDeck getDeck(DeckName deckName) {
-        switch (deckName) {
+    public static PlayerDeck getDeck(DeckNameEnum deckNameEnum) {
+        switch (deckNameEnum) {
             case BASICLIGHT:
                 return getBasicLightPlayerDeck();
             case BASICDARK:

@@ -67,7 +67,7 @@ public class Challenge {
             }
             drawnPlayerCardsAttributes = new StringJoiner(",", "[", "]");
             drawnPlayerCardsAttributesList.add(drawnPlayerCardsAttributes
-                    .add(drawnPlayerCard.getDeckName().toString())
+                    .add(drawnPlayerCard.getDeckNameEnum().toString())
                     .add(Integer.toString(drawnPlayerCard.getAttribute(attribute)[0]))
                     .add(Integer.toString(drawnPlayerCard.getAttribute(attribute)[1])));
         }

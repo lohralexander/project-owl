@@ -10,8 +10,8 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.lohr.owl.backend.data.DataComponent;
-import org.lohr.owl.backend.playerdeck.DeckName;
-import org.lohr.owl.backend.playerdeck.DeckNameTransformer;
+import org.lohr.owl.backend.playerdeck.DeckNameEnum;
+import org.lohr.owl.backend.playerdeck.DeckNameEnumTransformer;
 import org.lohr.owl.views.main.MainView;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,7 +23,7 @@ import java.util.Set;
 @CssImport("styles/views/playercards/player-cards-view.css")
 public class PlayerCardsView extends Div {
 
-    private final DataComponent dataComponent;
+    private final transient DataComponent dataComponent;
 
     @Autowired
     public PlayerCardsView(DataComponent dataComponent) {
@@ -39,12 +39,12 @@ public class PlayerCardsView extends Div {
 
         checkboxGroup.setLabel("Choose Player Cards");
         checkboxGroup.setItems("Basic Light", "Basic Dark", "Race Human", "Character Arrogant", "Character Weak", "Class Monk");
-        if (dataComponent.getDeckNames().isEmpty()) {
+        if (dataComponent.getDeckNameEnums().isEmpty()) {
             checkboxGroup.setValue(Sets.newHashSet("Basic Light", "Basic Dark"));
         } else {
             Set<String> set = new HashSet<>();
-            for (DeckName deckName : dataComponent.getDeckNames()) {
-                set.add(DeckNameTransformer.of(deckName));
+            for (DeckNameEnum deckNameEnum : dataComponent.getDeckNameEnums()) {
+                set.add(DeckNameEnumTransformer.of(deckNameEnum));
             }
             checkboxGroup.setValue(set);
         }
@@ -55,7 +55,7 @@ public class PlayerCardsView extends Div {
         button.addClickListener(event -> {
             dataComponent.resetDeckNames();
             for (String item : checkboxGroup.getSelectedItems()) {
-                dataComponent.getDeckNames().add(DeckNameTransformer.of(item));
+                dataComponent.getDeckNameEnums().add(DeckNameEnumTransformer.of(item));
             }
             button.setText("Player Cards saved!");
         });

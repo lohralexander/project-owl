@@ -11,14 +11,14 @@ public class PlayerCard {
     private final int[] intelligence;
 
     @Getter
-    private final DeckName deckName;
+    private final DeckNameEnum deckNameEnum;
     @Getter
     private String ruleText;
     @Getter
     private String flavourText;
 
-    public PlayerCard(DeckName deckName, int[] strength, int[] constitution, int[] dexterity, int[] charisma, int[] wisdom, int[] intelligence) {
-        this.deckName = deckName;
+    public PlayerCard(DeckNameEnum deckNameEnum, int[] strength, int[] constitution, int[] dexterity, int[] charisma, int[] wisdom, int[] intelligence) {
+        this.deckNameEnum = deckNameEnum;
         this.strength = strength;
         this.constitution = constitution;
         this.dexterity = dexterity;
