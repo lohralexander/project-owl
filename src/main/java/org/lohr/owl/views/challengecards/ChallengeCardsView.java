@@ -10,8 +10,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import org.lohr.owl.backend.challengedeck.Challenge;
 import org.lohr.owl.backend.challengedeck.ChallengeCard;
-import org.lohr.owl.backend.challengedeck.ChallengeEnum;
 import org.lohr.owl.backend.data.DataComponent;
 import org.lohr.owl.views.main.MainView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,420 +33,420 @@ public class ChallengeCardsView extends Div {
     }
 
     public void createView() {
-        ComboBox<ChallengeEnum> valueComboBox1 = new ComboBox<>();
-        valueComboBox1.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox1 = new ComboBox<>();
+        valueComboBox1.setItems(Challenge.values());
         valueComboBox1.setValue(dataComponent.getChallengeCards().get(0).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox2 = new ComboBox<>();
-        valueComboBox2.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox2 = new ComboBox<>();
+        valueComboBox2.setItems(Challenge.values());
         valueComboBox2.setValue(dataComponent.getChallengeCards().get(1).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox3 = new ComboBox<>();
-        valueComboBox3.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox3 = new ComboBox<>();
+        valueComboBox3.setItems(Challenge.values());
         valueComboBox3.setValue(dataComponent.getChallengeCards().get(2).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox4 = new ComboBox<>();
-        valueComboBox4.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox4 = new ComboBox<>();
+        valueComboBox4.setItems(Challenge.values());
         valueComboBox4.setValue(dataComponent.getChallengeCards().get(3).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox5 = new ComboBox<>();
-        valueComboBox5.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox5 = new ComboBox<>();
+        valueComboBox5.setItems(Challenge.values());
         valueComboBox5.setValue(dataComponent.getChallengeCards().get(4).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox6 = new ComboBox<>();
-        valueComboBox6.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox6 = new ComboBox<>();
+        valueComboBox6.setItems(Challenge.values());
         valueComboBox6.setValue(dataComponent.getChallengeCards().get(5).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox7 = new ComboBox<>();
-        valueComboBox7.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox7 = new ComboBox<>();
+        valueComboBox7.setItems(Challenge.values());
         valueComboBox7.setValue(dataComponent.getChallengeCards().get(6).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox8 = new ComboBox<>();
-        valueComboBox8.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox8 = new ComboBox<>();
+        valueComboBox8.setItems(Challenge.values());
         valueComboBox8.setValue(dataComponent.getChallengeCards().get(7).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox9 = new ComboBox<>();
-        valueComboBox9.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox9 = new ComboBox<>();
+        valueComboBox9.setItems(Challenge.values());
         valueComboBox9.setValue(dataComponent.getChallengeCards().get(8).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox10 = new ComboBox<>();
-        valueComboBox10.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox10 = new ComboBox<>();
+        valueComboBox10.setItems(Challenge.values());
         valueComboBox10.setValue(dataComponent.getChallengeCards().get(9).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox11 = new ComboBox<>();
-        valueComboBox11.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox11 = new ComboBox<>();
+        valueComboBox11.setItems(Challenge.values());
         valueComboBox11.setValue(dataComponent.getChallengeCards().get(10).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox12 = new ComboBox<>();
-        valueComboBox12.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox12 = new ComboBox<>();
+        valueComboBox12.setItems(Challenge.values());
         valueComboBox12.setValue(dataComponent.getChallengeCards().get(11).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox13 = new ComboBox<>();
-        valueComboBox13.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox13 = new ComboBox<>();
+        valueComboBox13.setItems(Challenge.values());
         valueComboBox13.setValue(dataComponent.getChallengeCards().get(12).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox14 = new ComboBox<>();
-        valueComboBox14.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox14 = new ComboBox<>();
+        valueComboBox14.setItems(Challenge.values());
         valueComboBox14.setValue(dataComponent.getChallengeCards().get(13).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox15 = new ComboBox<>();
-        valueComboBox15.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox15 = new ComboBox<>();
+        valueComboBox15.setItems(Challenge.values());
         valueComboBox15.setValue(dataComponent.getChallengeCards().get(14).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox16 = new ComboBox<>();
-        valueComboBox16.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox16 = new ComboBox<>();
+        valueComboBox16.setItems(Challenge.values());
         valueComboBox16.setValue(dataComponent.getChallengeCards().get(15).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox17 = new ComboBox<>();
-        valueComboBox17.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox17 = new ComboBox<>();
+        valueComboBox17.setItems(Challenge.values());
         valueComboBox17.setValue(dataComponent.getChallengeCards().get(16).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox18 = new ComboBox<>();
-        valueComboBox18.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox18 = new ComboBox<>();
+        valueComboBox18.setItems(Challenge.values());
         valueComboBox18.setValue(dataComponent.getChallengeCards().get(17).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox19 = new ComboBox<>();
-        valueComboBox19.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox19 = new ComboBox<>();
+        valueComboBox19.setItems(Challenge.values());
         valueComboBox19.setValue(dataComponent.getChallengeCards().get(18).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox20 = new ComboBox<>();
-        valueComboBox20.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox20 = new ComboBox<>();
+        valueComboBox20.setItems(Challenge.values());
         valueComboBox20.setValue(dataComponent.getChallengeCards().get(19).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox21 = new ComboBox<>();
-        valueComboBox21.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox21 = new ComboBox<>();
+        valueComboBox21.setItems(Challenge.values());
         valueComboBox21.setValue(dataComponent.getChallengeCards().get(20).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox22 = new ComboBox<>();
-        valueComboBox22.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox22 = new ComboBox<>();
+        valueComboBox22.setItems(Challenge.values());
         valueComboBox22.setValue(dataComponent.getChallengeCards().get(21).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox23 = new ComboBox<>();
-        valueComboBox23.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox23 = new ComboBox<>();
+        valueComboBox23.setItems(Challenge.values());
         valueComboBox23.setValue(dataComponent.getChallengeCards().get(22).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox24 = new ComboBox<>();
-        valueComboBox24.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox24 = new ComboBox<>();
+        valueComboBox24.setItems(Challenge.values());
         valueComboBox24.setValue(dataComponent.getChallengeCards().get(23).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox25 = new ComboBox<>();
-        valueComboBox25.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox25 = new ComboBox<>();
+        valueComboBox25.setItems(Challenge.values());
         valueComboBox25.setValue(dataComponent.getChallengeCards().get(24).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox26 = new ComboBox<>();
-        valueComboBox26.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox26 = new ComboBox<>();
+        valueComboBox26.setItems(Challenge.values());
         valueComboBox26.setValue(dataComponent.getChallengeCards().get(25).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox27 = new ComboBox<>();
-        valueComboBox27.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox27 = new ComboBox<>();
+        valueComboBox27.setItems(Challenge.values());
         valueComboBox27.setValue(dataComponent.getChallengeCards().get(26).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox28 = new ComboBox<>();
-        valueComboBox28.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox28 = new ComboBox<>();
+        valueComboBox28.setItems(Challenge.values());
         valueComboBox28.setValue(dataComponent.getChallengeCards().get(27).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox29 = new ComboBox<>();
-        valueComboBox29.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox29 = new ComboBox<>();
+        valueComboBox29.setItems(Challenge.values());
         valueComboBox29.setValue(dataComponent.getChallengeCards().get(28).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox30 = new ComboBox<>();
-        valueComboBox30.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox30 = new ComboBox<>();
+        valueComboBox30.setItems(Challenge.values());
         valueComboBox30.setValue(dataComponent.getChallengeCards().get(29).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox31 = new ComboBox<>();
-        valueComboBox31.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox31 = new ComboBox<>();
+        valueComboBox31.setItems(Challenge.values());
         valueComboBox31.setValue(dataComponent.getChallengeCards().get(30).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox32 = new ComboBox<>();
-        valueComboBox32.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox32 = new ComboBox<>();
+        valueComboBox32.setItems(Challenge.values());
         valueComboBox32.setValue(dataComponent.getChallengeCards().get(31).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox33 = new ComboBox<>();
-        valueComboBox33.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox33 = new ComboBox<>();
+        valueComboBox33.setItems(Challenge.values());
         valueComboBox33.setValue(dataComponent.getChallengeCards().get(32).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox34 = new ComboBox<>();
-        valueComboBox34.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox34 = new ComboBox<>();
+        valueComboBox34.setItems(Challenge.values());
         valueComboBox34.setValue(dataComponent.getChallengeCards().get(33).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox35 = new ComboBox<>();
-        valueComboBox35.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox35 = new ComboBox<>();
+        valueComboBox35.setItems(Challenge.values());
         valueComboBox35.setValue(dataComponent.getChallengeCards().get(34).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox36 = new ComboBox<>();
-        valueComboBox36.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox36 = new ComboBox<>();
+        valueComboBox36.setItems(Challenge.values());
         valueComboBox36.setValue(dataComponent.getChallengeCards().get(35).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox37 = new ComboBox<>();
-        valueComboBox37.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox37 = new ComboBox<>();
+        valueComboBox37.setItems(Challenge.values());
         valueComboBox37.setValue(dataComponent.getChallengeCards().get(36).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox38 = new ComboBox<>();
-        valueComboBox38.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox38 = new ComboBox<>();
+        valueComboBox38.setItems(Challenge.values());
         valueComboBox38.setValue(dataComponent.getChallengeCards().get(37).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox39 = new ComboBox<>();
-        valueComboBox39.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox39 = new ComboBox<>();
+        valueComboBox39.setItems(Challenge.values());
         valueComboBox39.setValue(dataComponent.getChallengeCards().get(38).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox40 = new ComboBox<>();
-        valueComboBox40.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox40 = new ComboBox<>();
+        valueComboBox40.setItems(Challenge.values());
         valueComboBox40.setValue(dataComponent.getChallengeCards().get(39).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox41 = new ComboBox<>();
-        valueComboBox41.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox41 = new ComboBox<>();
+        valueComboBox41.setItems(Challenge.values());
         valueComboBox41.setValue(dataComponent.getChallengeCards().get(40).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox42 = new ComboBox<>();
-        valueComboBox42.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox42 = new ComboBox<>();
+        valueComboBox42.setItems(Challenge.values());
         valueComboBox42.setValue(dataComponent.getChallengeCards().get(41).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox43 = new ComboBox<>();
-        valueComboBox43.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox43 = new ComboBox<>();
+        valueComboBox43.setItems(Challenge.values());
         valueComboBox43.setValue(dataComponent.getChallengeCards().get(42).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox44 = new ComboBox<>();
-        valueComboBox44.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox44 = new ComboBox<>();
+        valueComboBox44.setItems(Challenge.values());
         valueComboBox44.setValue(dataComponent.getChallengeCards().get(43).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox45 = new ComboBox<>();
-        valueComboBox45.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox45 = new ComboBox<>();
+        valueComboBox45.setItems(Challenge.values());
         valueComboBox45.setValue(dataComponent.getChallengeCards().get(44).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox46 = new ComboBox<>();
-        valueComboBox46.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox46 = new ComboBox<>();
+        valueComboBox46.setItems(Challenge.values());
         valueComboBox46.setValue(dataComponent.getChallengeCards().get(45).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox47 = new ComboBox<>();
-        valueComboBox47.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox47 = new ComboBox<>();
+        valueComboBox47.setItems(Challenge.values());
         valueComboBox47.setValue(dataComponent.getChallengeCards().get(46).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox48 = new ComboBox<>();
-        valueComboBox48.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox48 = new ComboBox<>();
+        valueComboBox48.setItems(Challenge.values());
         valueComboBox48.setValue(dataComponent.getChallengeCards().get(47).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox49 = new ComboBox<>();
-        valueComboBox49.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox49 = new ComboBox<>();
+        valueComboBox49.setItems(Challenge.values());
         valueComboBox49.setValue(dataComponent.getChallengeCards().get(48).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox50 = new ComboBox<>();
-        valueComboBox50.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox50 = new ComboBox<>();
+        valueComboBox50.setItems(Challenge.values());
         valueComboBox50.setValue(dataComponent.getChallengeCards().get(49).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox51 = new ComboBox<>();
-        valueComboBox51.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox51 = new ComboBox<>();
+        valueComboBox51.setItems(Challenge.values());
         valueComboBox51.setValue(dataComponent.getChallengeCards().get(50).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox52 = new ComboBox<>();
-        valueComboBox52.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox52 = new ComboBox<>();
+        valueComboBox52.setItems(Challenge.values());
         valueComboBox52.setValue(dataComponent.getChallengeCards().get(51).getLightSide());
 
-        ComboBox<ChallengeEnum> valueComboBox1b = new ComboBox<>();
-        valueComboBox1b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox1b = new ComboBox<>();
+        valueComboBox1b.setItems(Challenge.values());
         valueComboBox1b.setValue(dataComponent.getChallengeCards().get(0).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox2b = new ComboBox<>();
-        valueComboBox2b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox2b = new ComboBox<>();
+        valueComboBox2b.setItems(Challenge.values());
         valueComboBox2b.setValue(dataComponent.getChallengeCards().get(1).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox3b = new ComboBox<>();
-        valueComboBox3b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox3b = new ComboBox<>();
+        valueComboBox3b.setItems(Challenge.values());
         valueComboBox3b.setValue(dataComponent.getChallengeCards().get(2).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox4b = new ComboBox<>();
-        valueComboBox4b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox4b = new ComboBox<>();
+        valueComboBox4b.setItems(Challenge.values());
         valueComboBox4b.setValue(dataComponent.getChallengeCards().get(3).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox5b = new ComboBox<>();
-        valueComboBox5b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox5b = new ComboBox<>();
+        valueComboBox5b.setItems(Challenge.values());
         valueComboBox5b.setValue(dataComponent.getChallengeCards().get(4).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox6b = new ComboBox<>();
-        valueComboBox6b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox6b = new ComboBox<>();
+        valueComboBox6b.setItems(Challenge.values());
         valueComboBox6b.setValue(dataComponent.getChallengeCards().get(5).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox7b = new ComboBox<>();
-        valueComboBox7b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox7b = new ComboBox<>();
+        valueComboBox7b.setItems(Challenge.values());
         valueComboBox7b.setValue(dataComponent.getChallengeCards().get(6).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox8b = new ComboBox<>();
-        valueComboBox8b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox8b = new ComboBox<>();
+        valueComboBox8b.setItems(Challenge.values());
         valueComboBox8b.setValue(dataComponent.getChallengeCards().get(7).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox9b = new ComboBox<>();
-        valueComboBox9b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox9b = new ComboBox<>();
+        valueComboBox9b.setItems(Challenge.values());
         valueComboBox9b.setValue(dataComponent.getChallengeCards().get(8).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox10b = new ComboBox<>();
-        valueComboBox10b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox10b = new ComboBox<>();
+        valueComboBox10b.setItems(Challenge.values());
         valueComboBox10b.setValue(dataComponent.getChallengeCards().get(9).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox11b = new ComboBox<>();
-        valueComboBox11b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox11b = new ComboBox<>();
+        valueComboBox11b.setItems(Challenge.values());
         valueComboBox11b.setValue(dataComponent.getChallengeCards().get(10).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox12b = new ComboBox<>();
-        valueComboBox12b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox12b = new ComboBox<>();
+        valueComboBox12b.setItems(Challenge.values());
         valueComboBox12b.setValue(dataComponent.getChallengeCards().get(11).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox13b = new ComboBox<>();
-        valueComboBox13b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox13b = new ComboBox<>();
+        valueComboBox13b.setItems(Challenge.values());
         valueComboBox13b.setValue(dataComponent.getChallengeCards().get(12).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox14b = new ComboBox<>();
-        valueComboBox14b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox14b = new ComboBox<>();
+        valueComboBox14b.setItems(Challenge.values());
         valueComboBox14b.setValue(dataComponent.getChallengeCards().get(13).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox15b = new ComboBox<>();
-        valueComboBox15b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox15b = new ComboBox<>();
+        valueComboBox15b.setItems(Challenge.values());
         valueComboBox15b.setValue(dataComponent.getChallengeCards().get(14).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox16b = new ComboBox<>();
-        valueComboBox16b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox16b = new ComboBox<>();
+        valueComboBox16b.setItems(Challenge.values());
         valueComboBox16b.setValue(dataComponent.getChallengeCards().get(15).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox17b = new ComboBox<>();
-        valueComboBox17b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox17b = new ComboBox<>();
+        valueComboBox17b.setItems(Challenge.values());
         valueComboBox17b.setValue(dataComponent.getChallengeCards().get(16).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox18b = new ComboBox<>();
-        valueComboBox18b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox18b = new ComboBox<>();
+        valueComboBox18b.setItems(Challenge.values());
         valueComboBox18b.setValue(dataComponent.getChallengeCards().get(17).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox19b = new ComboBox<>();
-        valueComboBox19b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox19b = new ComboBox<>();
+        valueComboBox19b.setItems(Challenge.values());
         valueComboBox19b.setValue(dataComponent.getChallengeCards().get(18).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox20b = new ComboBox<>();
-        valueComboBox20b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox20b = new ComboBox<>();
+        valueComboBox20b.setItems(Challenge.values());
         valueComboBox20b.setValue(dataComponent.getChallengeCards().get(19).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox21b = new ComboBox<>();
-        valueComboBox21b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox21b = new ComboBox<>();
+        valueComboBox21b.setItems(Challenge.values());
         valueComboBox21b.setValue(dataComponent.getChallengeCards().get(20).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox22b = new ComboBox<>();
-        valueComboBox22b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox22b = new ComboBox<>();
+        valueComboBox22b.setItems(Challenge.values());
         valueComboBox22b.setValue(dataComponent.getChallengeCards().get(21).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox23b = new ComboBox<>();
-        valueComboBox23b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox23b = new ComboBox<>();
+        valueComboBox23b.setItems(Challenge.values());
         valueComboBox23b.setValue(dataComponent.getChallengeCards().get(22).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox24b = new ComboBox<>();
-        valueComboBox24b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox24b = new ComboBox<>();
+        valueComboBox24b.setItems(Challenge.values());
         valueComboBox24b.setValue(dataComponent.getChallengeCards().get(23).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox25b = new ComboBox<>();
-        valueComboBox25b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox25b = new ComboBox<>();
+        valueComboBox25b.setItems(Challenge.values());
         valueComboBox25b.setValue(dataComponent.getChallengeCards().get(24).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox26b = new ComboBox<>();
-        valueComboBox26b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox26b = new ComboBox<>();
+        valueComboBox26b.setItems(Challenge.values());
         valueComboBox26b.setValue(dataComponent.getChallengeCards().get(25).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox27b = new ComboBox<>();
-        valueComboBox27b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox27b = new ComboBox<>();
+        valueComboBox27b.setItems(Challenge.values());
         valueComboBox27b.setValue(dataComponent.getChallengeCards().get(26).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox28b = new ComboBox<>();
-        valueComboBox28b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox28b = new ComboBox<>();
+        valueComboBox28b.setItems(Challenge.values());
         valueComboBox28b.setValue(dataComponent.getChallengeCards().get(27).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox29b = new ComboBox<>();
-        valueComboBox29b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox29b = new ComboBox<>();
+        valueComboBox29b.setItems(Challenge.values());
         valueComboBox29b.setValue(dataComponent.getChallengeCards().get(28).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox30b = new ComboBox<>();
-        valueComboBox30b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox30b = new ComboBox<>();
+        valueComboBox30b.setItems(Challenge.values());
         valueComboBox30b.setValue(dataComponent.getChallengeCards().get(29).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox31b = new ComboBox<>();
-        valueComboBox31b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox31b = new ComboBox<>();
+        valueComboBox31b.setItems(Challenge.values());
         valueComboBox31b.setValue(dataComponent.getChallengeCards().get(30).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox32b = new ComboBox<>();
-        valueComboBox32b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox32b = new ComboBox<>();
+        valueComboBox32b.setItems(Challenge.values());
         valueComboBox32b.setValue(dataComponent.getChallengeCards().get(31).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox33b = new ComboBox<>();
-        valueComboBox33b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox33b = new ComboBox<>();
+        valueComboBox33b.setItems(Challenge.values());
         valueComboBox33b.setValue(dataComponent.getChallengeCards().get(32).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox34b = new ComboBox<>();
-        valueComboBox34b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox34b = new ComboBox<>();
+        valueComboBox34b.setItems(Challenge.values());
         valueComboBox34b.setValue(dataComponent.getChallengeCards().get(33).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox35b = new ComboBox<>();
-        valueComboBox35b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox35b = new ComboBox<>();
+        valueComboBox35b.setItems(Challenge.values());
         valueComboBox35b.setValue(dataComponent.getChallengeCards().get(34).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox36b = new ComboBox<>();
-        valueComboBox36b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox36b = new ComboBox<>();
+        valueComboBox36b.setItems(Challenge.values());
         valueComboBox36b.setValue(dataComponent.getChallengeCards().get(35).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox37b = new ComboBox<>();
-        valueComboBox37b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox37b = new ComboBox<>();
+        valueComboBox37b.setItems(Challenge.values());
         valueComboBox37b.setValue(dataComponent.getChallengeCards().get(36).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox38b = new ComboBox<>();
-        valueComboBox38b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox38b = new ComboBox<>();
+        valueComboBox38b.setItems(Challenge.values());
         valueComboBox38b.setValue(dataComponent.getChallengeCards().get(37).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox39b = new ComboBox<>();
-        valueComboBox39b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox39b = new ComboBox<>();
+        valueComboBox39b.setItems(Challenge.values());
         valueComboBox39b.setValue(dataComponent.getChallengeCards().get(38).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox40b = new ComboBox<>();
-        valueComboBox40b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox40b = new ComboBox<>();
+        valueComboBox40b.setItems(Challenge.values());
         valueComboBox40b.setValue(dataComponent.getChallengeCards().get(39).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox41b = new ComboBox<>();
-        valueComboBox41b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox41b = new ComboBox<>();
+        valueComboBox41b.setItems(Challenge.values());
         valueComboBox41b.setValue(dataComponent.getChallengeCards().get(40).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox42b = new ComboBox<>();
-        valueComboBox42b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox42b = new ComboBox<>();
+        valueComboBox42b.setItems(Challenge.values());
         valueComboBox42b.setValue(dataComponent.getChallengeCards().get(41).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox43b = new ComboBox<>();
-        valueComboBox43b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox43b = new ComboBox<>();
+        valueComboBox43b.setItems(Challenge.values());
         valueComboBox43b.setValue(dataComponent.getChallengeCards().get(42).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox44b = new ComboBox<>();
-        valueComboBox44b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox44b = new ComboBox<>();
+        valueComboBox44b.setItems(Challenge.values());
         valueComboBox44b.setValue(dataComponent.getChallengeCards().get(43).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox45b = new ComboBox<>();
-        valueComboBox45b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox45b = new ComboBox<>();
+        valueComboBox45b.setItems(Challenge.values());
         valueComboBox45b.setValue(dataComponent.getChallengeCards().get(44).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox46b = new ComboBox<>();
-        valueComboBox46b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox46b = new ComboBox<>();
+        valueComboBox46b.setItems(Challenge.values());
         valueComboBox46b.setValue(dataComponent.getChallengeCards().get(45).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox47b = new ComboBox<>();
-        valueComboBox47b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox47b = new ComboBox<>();
+        valueComboBox47b.setItems(Challenge.values());
         valueComboBox47b.setValue(dataComponent.getChallengeCards().get(46).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox48b = new ComboBox<>();
-        valueComboBox48b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox48b = new ComboBox<>();
+        valueComboBox48b.setItems(Challenge.values());
         valueComboBox48b.setValue(dataComponent.getChallengeCards().get(47).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox49b = new ComboBox<>();
-        valueComboBox49b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox49b = new ComboBox<>();
+        valueComboBox49b.setItems(Challenge.values());
         valueComboBox49b.setValue(dataComponent.getChallengeCards().get(48).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox50b = new ComboBox<>();
-        valueComboBox50b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox50b = new ComboBox<>();
+        valueComboBox50b.setItems(Challenge.values());
         valueComboBox50b.setValue(dataComponent.getChallengeCards().get(49).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox51b = new ComboBox<>();
-        valueComboBox51b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox51b = new ComboBox<>();
+        valueComboBox51b.setItems(Challenge.values());
         valueComboBox51b.setValue(dataComponent.getChallengeCards().get(50).getDarkSide());
 
-        ComboBox<ChallengeEnum> valueComboBox52b = new ComboBox<>();
-        valueComboBox52b.setItems(ChallengeEnum.values());
+        ComboBox<Challenge> valueComboBox52b = new ComboBox<>();
+        valueComboBox52b.setItems(Challenge.values());
         valueComboBox52b.setValue(dataComponent.getChallengeCards().get(51).getDarkSide());
 
         TextField card1 = new TextField();

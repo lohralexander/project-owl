@@ -1,8 +1,8 @@
 package org.lohr.owl.backend.data;
 
+import org.lohr.owl.backend.challengedeck.Challenge;
 import org.lohr.owl.backend.challengedeck.ChallengeCard;
-import org.lohr.owl.backend.challengedeck.ChallengeEnum;
-import org.lohr.owl.backend.playerdeck.DeckNameEnum;
+import org.lohr.owl.backend.playerdeck.DeckName;
 import org.lohr.owl.backend.playerdeck.PlayerCard;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public class DataProvider {
     }
 
     public static PlayerDeck getBasicLightPlayerDeck() {
-        DeckNameEnum deckname = DeckNameEnum.BASICLIGHT;
+        DeckName deckname = DeckName.BASICLIGHT;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{2, 0}, new int[]{1, 0}, new int[]{1, 0}, new int[]{1, 1}, new int[]{1, 1}, new int[]{0, 1}),
@@ -31,7 +31,7 @@ public class DataProvider {
     }
 
     public static PlayerDeck getBasicDarkPlayerDeck() {
-        DeckNameEnum deckname = DeckNameEnum.BASICDARK;
+        DeckName deckname = DeckName.BASICDARK;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{1, 0}, new int[]{1, 1}, new int[]{1, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 2}),
@@ -44,7 +44,7 @@ public class DataProvider {
     }
 
     public static PlayerDeck getHumanRacePlayerDeck() {
-        DeckNameEnum deckname = DeckNameEnum.RACEHUMAN;
+        DeckName deckname = DeckName.RACEHUMAN;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}, new int[]{2, 1}),
@@ -54,21 +54,21 @@ public class DataProvider {
     }
 
     public static PlayerDeck getCharacterArrogantPlayerDeck() {
-        DeckNameEnum deckname = DeckNameEnum.CHARACTERARROGANT;
+        DeckName deckname = DeckName.CHARACTERARROGANT;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCard(new PlayerCard(deckname, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 2}, new int[]{0, 1}, new int[]{0, 1}));
         return playerDeck;
     }
 
     public static PlayerDeck getCharacterWeakPlayerDeck() {
-        DeckNameEnum deckname = DeckNameEnum.CHARACTERWEAK;
+        DeckName deckname = DeckName.CHARACTERWEAK;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCard(new PlayerCard(deckname, new int[]{0, 2}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}, new int[]{0, 1}));
         return playerDeck;
     }
 
     public static PlayerDeck getSpecialisationPlayerDeck() {
-        DeckNameEnum deckname = DeckNameEnum.SPECIALISATIONMONK;
+        DeckName deckname = DeckName.SPECIALISATIONMONK;
         PlayerDeck playerDeck = new PlayerDeck(deckname);
         playerDeck.addPlayerCards(Arrays.asList(
                 new PlayerCard(deckname, new int[]{1, 1}, new int[]{1, 1}, new int[]{3, 0}, new int[]{0, 2}, new int[]{2, 0}, new int[]{1, 1}),
@@ -78,8 +78,8 @@ public class DataProvider {
         return playerDeck;
     }
 
-    public static PlayerDeck getDeck(DeckNameEnum deckNameEnum) {
-        switch (deckNameEnum) {
+    public static PlayerDeck getDeck(DeckName deckName) {
+        switch (deckName) {
             case BASICLIGHT:
                 return getBasicLightPlayerDeck();
             case BASICDARK:
@@ -100,67 +100,67 @@ public class DataProvider {
     public static List<ChallengeCard> getChallengeCards() {
         ArrayList<ChallengeCard> challengeCards = new ArrayList<>();
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.CRITICALSUCCESS, ChallengeEnum.CRITICALFAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.CRITICALSUCCESS, Challenge.CRITICALFAILURE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.CRITICALSUCCESS, ChallengeEnum.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.CRITICALSUCCESS, Challenge.FAILURE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.FAILURE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.DISADVANTAGE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.DISADVANTAGE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.ADVANTAGE, ChallengeEnum.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.ADVANTAGE, Challenge.FAILURE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.RELIEF, ChallengeEnum.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
+        challengeCards.add(new ChallengeCard(Challenge.RELIEF, Challenge.EFFORT));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.BADLUCKFAILURE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.BADLUCKFAILURE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.BADLUCKFAILURE, ChallengeEnum.FAILURE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.BADLUCKFAILURE, ChallengeEnum.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.BADLUCKFAILURE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.BADLUCKFAILURE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.BADLUCKFAILURE, Challenge.FAILURE));
+        challengeCards.add(new ChallengeCard(Challenge.BADLUCKFAILURE, Challenge.FAILURE));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.LUCK));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.LUCK));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.LUCK));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.LUCK));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.LUCK));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.SUCCESS, ChallengeEnum.LUCK));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.LUCK));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.LUCK));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.LUCK));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.LUCK));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.LUCK));
+        challengeCards.add(new ChallengeCard(Challenge.SUCCESS, Challenge.LUCK));
 
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
-        challengeCards.add(new ChallengeCard(ChallengeEnum.NEUTRAL, ChallengeEnum.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
+        challengeCards.add(new ChallengeCard(Challenge.NEUTRAL, Challenge.DISADVANTAGE));
         return challengeCards;
     }
 }

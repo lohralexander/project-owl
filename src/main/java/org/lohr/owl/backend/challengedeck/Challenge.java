@@ -1,6 +1,6 @@
 package org.lohr.owl.backend.challengedeck;
 
-public enum ChallengeEnum {
+public enum Challenge {
     LUCK,
     EFFORT,
     DISADVANTAGE,

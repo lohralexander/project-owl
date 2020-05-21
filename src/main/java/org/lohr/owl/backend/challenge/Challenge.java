@@ -4,7 +4,6 @@ package org.lohr.owl.backend.challenge;
 import org.apache.log4j.Logger;
 import org.lohr.owl.backend.challengedeck.ChallengeCard;
 import org.lohr.owl.backend.challengedeck.ChallengeDeck;
-import org.lohr.owl.backend.challengedeck.ChallengeEnum;
 import org.lohr.owl.backend.playerdeck.Attribute;
 import org.lohr.owl.backend.playerdeck.PlayerCard;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
@@ -34,8 +33,8 @@ public class Challenge {
         ArrayList<ChallengeCard> tempChallengeDeck = new ArrayList<>(challengeDeck.getChallengeCards());
 
         ArrayList<PlayerCard> drawnPlayerCards = drawPlayerCards(tempPlayerDeck, amountCards);
-        ArrayList<ChallengeEnum> challengeEnums = evaluateChallengeCards(tempChallengeDeck, drawnPlayerCards, attribute);
-        return evaluateResult(challengeEnums);
+        ArrayList<org.lohr.owl.backend.challengedeck.Challenge> challenges = evaluateChallengeCards(tempChallengeDeck, drawnPlayerCards, attribute);
+        return evaluateResult(challenges);
     }
 
     private ArrayList<PlayerCard> drawPlayerCards(ArrayList<PlayerCard> playerDeck, int amountCards) {
@@ -49,8 +48,8 @@ public class Challenge {
         return drawnPlayerCards;
     }
 
-    private ArrayList<ChallengeEnum> evaluateChallengeCards(ArrayList<ChallengeCard> challengeDeck, ArrayList<PlayerCard> drawnPlayerCards, Attribute attribute) {
-        ArrayList<ChallengeEnum> evaluatedChallengeOutcomes = new ArrayList<>();
+    private ArrayList<org.lohr.owl.backend.challengedeck.Challenge> evaluateChallengeCards(ArrayList<ChallengeCard> challengeDeck, ArrayList<PlayerCard> drawnPlayerCards, Attribute attribute) {
+        ArrayList<org.lohr.owl.backend.challengedeck.Challenge> evaluatedChallengeOutcomes = new ArrayList<>();
         StringJoiner drawnPlayerCardsAttributes;
         ArrayList<StringJoiner> drawnPlayerCardsAttributesList = new ArrayList<>();
 
@@ -67,7 +66,7 @@ public class Challenge {
             }
             drawnPlayerCardsAttributes = new StringJoiner(",", "[", "]");
             drawnPlayerCardsAttributesList.add(drawnPlayerCardsAttributes
-                    .add(drawnPlayerCard.getDeckNameEnum().toString())
+                    .add(drawnPlayerCard.getDeckName().toString())
                     .add(Integer.toString(drawnPlayerCard.getAttribute(attribute)[0]))
                     .add(Integer.toString(drawnPlayerCard.getAttribute(attribute)[1])));
         }
@@ -77,21 +76,21 @@ public class Challenge {
         return evaluatedChallengeOutcomes;
     }
 
-    private boolean evaluateResult(ArrayList<ChallengeEnum> challengeEnums) {
+    private boolean evaluateResult(ArrayList<org.lohr.owl.backend.challengedeck.Challenge> challenges) {
         int successCounter = 0;
         boolean result;
-        ArrayList<ChallengeEnum> challengeEnumArrayList = new ArrayList<>();
-        for (ChallengeEnum challengeEnum : challengeEnums) {
-            challengeEnumArrayList.add(challengeEnum);
-            switch (challengeEnum) {
+        ArrayList<org.lohr.owl.backend.challengedeck.Challenge> challengeArrayList = new ArrayList<>();
+        for (org.lohr.owl.backend.challengedeck.Challenge challenge : challenges) {
+            challengeArrayList.add(challenge);
+            switch (challenge) {
                 case CRITICALSUCCESS:
-                    printChallengeEnum(challengeEnumArrayList, true);
+                    printChallengeEnum(challengeArrayList, true);
                     return true;
                 case SUCCESS:
                     successCounter++;
                     break;
                 case CRITICALFAILURE:
-                    printChallengeEnum(challengeEnumArrayList, false);
+                    printChallengeEnum(challengeArrayList, false);
                     return false;
                 case FAILURE:
                     successCounter--;
@@ -101,13 +100,13 @@ public class Challenge {
             }
         }
         result = successCounter > 0;
-        printChallengeEnum(challengeEnums, result);
+        printChallengeEnum(challenges, result);
         return result;
     }
 
-    public void printChallengeEnum(List<ChallengeEnum> challengeEnums, boolean result) {
+    public void printChallengeEnum(List<org.lohr.owl.backend.challengedeck.Challenge> challenges, boolean result) {
         if (logging) {
-            logger.info("Challenge Result: " + challengeEnums.toString() + " Success: " + result);
+            logger.info("Challenge Result: " + challenges.toString() + " Success: " + result);
         }
     }
 }

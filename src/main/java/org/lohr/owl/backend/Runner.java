@@ -5,7 +5,7 @@ import org.lohr.owl.backend.challengedeck.ChallengeDeck;
 import org.lohr.owl.backend.data.DataComponent;
 import org.lohr.owl.backend.data.DataProvider;
 import org.lohr.owl.backend.playerdeck.Attribute;
-import org.lohr.owl.backend.playerdeck.DeckNameEnum;
+import org.lohr.owl.backend.playerdeck.DeckName;
 import org.lohr.owl.backend.playerdeck.PlayerDeck;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,11 +23,11 @@ public class Runner {
     public static Map<Attribute, Double> run(DataComponent dataComponent, int amountCards) {
         Map<Attribute, Double> result = new EnumMap<>(Attribute.class);
         ChallengeDeck challengeDeck = new ChallengeDeck();
-        PlayerDeck playerDeck = new PlayerDeck(DeckNameEnum.MAIN);
+        PlayerDeck playerDeck = new PlayerDeck(DeckName.MAIN);
         List<Attribute> attributes = Arrays.asList(Attribute.STRENGTH, Attribute.CONSTITUTION, Attribute.DEXTERITY, Attribute.CHARISMA, Attribute.WISDOM, Attribute.INTELLIGENCE);
 
-        for (DeckNameEnum deckNameEnum : dataComponent.getDeckNameEnums()) {
-            playerDeck.mergeDecks(DataProvider.getDeck(deckNameEnum));
+        for (DeckName deckName : dataComponent.getDeckNames()) {
+            playerDeck.mergeDecks(DataProvider.getDeck(deckName));
         }
 
         challengeDeck.setChallengeCards(dataComponent.getChallengeCards());

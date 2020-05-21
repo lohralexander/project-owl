@@ -10,8 +10,8 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.lohr.owl.backend.data.DataComponent;
-import org.lohr.owl.backend.playerdeck.DeckNameEnum;
-import org.lohr.owl.backend.playerdeck.DeckNameEnumTransformer;
+import org.lohr.owl.backend.playerdeck.DeckName;
+import org.lohr.owl.backend.playerdeck.DeckNameTransformer;
 import org.lohr.owl.views.main.MainView;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -39,12 +39,12 @@ public class PlayerCardsView extends Div {
 
         checkboxGroup.setLabel("Choose Player Cards");
         checkboxGroup.setItems("Basic Light", "Basic Dark", "Race Human", "Character Arrogant", "Character Weak", "Class Monk");
-        if (dataComponent.getDeckNameEnums().isEmpty()) {
+        if (dataComponent.getDeckNames().isEmpty()) {
             checkboxGroup.setValue(Sets.newHashSet("Basic Light", "Basic Dark"));
         } else {
             Set<String> set = new HashSet<>();
-            for (DeckNameEnum deckNameEnum : dataComponent.getDeckNameEnums()) {
-                set.add(DeckNameEnumTransformer.of(deckNameEnum));
+            for (DeckName deckName : dataComponent.getDeckNames()) {
+                set.add(DeckNameTransformer.of(deckName));
             }
             checkboxGroup.setValue(set);
         }
@@ -55,7 +55,7 @@ public class PlayerCardsView extends Div {
         button.addClickListener(event -> {
             dataComponent.resetDeckNames();
             for (String item : checkboxGroup.getSelectedItems()) {
-                dataComponent.getDeckNameEnums().add(DeckNameEnumTransformer.of(item));
+                dataComponent.getDeckNames().add(DeckNameTransformer.of(item));
             }
             button.setText("Player Cards saved!");
         });

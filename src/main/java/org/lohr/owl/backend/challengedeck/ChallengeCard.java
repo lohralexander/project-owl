@@ -4,10 +4,10 @@ import lombok.Getter;
 
 @Getter
 public class ChallengeCard {
-    private final ChallengeEnum lightSide;
-    private final ChallengeEnum darkSide;
+    private final Challenge lightSide;
+    private final Challenge darkSide;
 
-    public ChallengeCard(ChallengeEnum lightSide, ChallengeEnum darkSide) {
+    public ChallengeCard(Challenge lightSide, Challenge darkSide) {
         this.lightSide = lightSide;
         this.darkSide = darkSide;
     }

@@ -1,6 +1,6 @@
 package org.lohr.owl.backend.playerdeck;
 
-public enum DeckNameEnum {
+public enum DeckName {
     BASICLIGHT,
     BASICDARK,
     RACEHUMAN,

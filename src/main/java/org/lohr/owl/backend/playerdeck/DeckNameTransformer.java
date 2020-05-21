@@ -1,30 +1,30 @@
 package org.lohr.owl.backend.playerdeck;
 
-public class DeckNameEnumTransformer {
-    private DeckNameEnumTransformer() {
+public class DeckNameTransformer {
+    private DeckNameTransformer() {
     }
 
-    public static DeckNameEnum of(String deckName) {
+    public static DeckName of(String deckName) {
         switch (deckName) {
             case "Basic Light":
-                return DeckNameEnum.BASICLIGHT;
+                return DeckName.BASICLIGHT;
             case "Basic Dark":
-                return DeckNameEnum.BASICDARK;
+                return DeckName.BASICDARK;
             case "Race Human":
-                return DeckNameEnum.RACEHUMAN;
+                return DeckName.RACEHUMAN;
             case "Character Arrogant":
-                return DeckNameEnum.CHARACTERARROGANT;
+                return DeckName.CHARACTERARROGANT;
             case "Character Weak":
-                return DeckNameEnum.CHARACTERWEAK;
+                return DeckName.CHARACTERWEAK;
             case "Class Monk":
-                return DeckNameEnum.SPECIALISATIONMONK;
+                return DeckName.SPECIALISATIONMONK;
             default:
                 return null;
         }
     }
 
-    public static String of(DeckNameEnum deckNameEnum) {
-        switch (deckNameEnum) {
+    public static String of(DeckName deckName) {
+        switch (deckName) {
             case BASICLIGHT:
                 return "Basic Light";
             case BASICDARK:

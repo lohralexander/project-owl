@@ -9,11 +9,11 @@ import java.util.List;
 @Getter
 @Setter
 public class PlayerDeck {
-    DeckNameEnum deckNameEnum;
+    DeckName deckName;
     List<PlayerCard> playerCards;
 
-    public PlayerDeck(DeckNameEnum deckNameEnum) {
-        this.deckNameEnum = deckNameEnum;
+    public PlayerDeck(DeckName deckName) {
+        this.deckName = deckName;
         this.playerCards = new ArrayList<>();
     }
 
@@ -27,8 +27,8 @@ public class PlayerDeck {
 
     public void mergeDecks(PlayerDeck playerDeck) {
         this.playerCards.addAll(playerDeck.getPlayerCards());
-        if (!this.deckNameEnum.equals(playerDeck.deckNameEnum)) {
-            this.deckNameEnum = DeckNameEnum.MERGED;
+        if (!this.deckName.equals(playerDeck.deckName)) {
+            this.deckName = DeckName.MERGED;
         }
     }
 }
